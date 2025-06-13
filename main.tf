@@ -53,6 +53,8 @@ module "single_virtual_machine" {
 
   hostname           = each.value.hostname
   ad_domain          = each.value.ad_domain
+  domain_admin_user     = var.domain_admin_user
+  domain_admin_password = var.domain_admin_password
   backup_policy      = each.value.backup_policy
   environment        = each.value.environment
   os_type            = each.value.os_type
@@ -62,4 +64,5 @@ module "single_virtual_machine" {
   size               = each.value.size
   storage_profile    = each.value.storage_profile
   tier               = each.value.tier
+
 }
