@@ -30,7 +30,8 @@ resource "aap_group" "sql_group" {
 }
 
 resource "aap_host" "vm_host" {
+  for_each     = var.vm_config
   inventory_id = aap_inventory.vm_inventory.id
-  name         = module.single_virtual_machine.virtual_machine_name
-  groups = [aap_group.sql_group.id]
+  name         = module.single_virtual_machine[each.key].virtual_machine_name
+  groups       = [aap_group.sql_group.id]
 }
