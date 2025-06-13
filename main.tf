@@ -32,5 +32,5 @@ resource "aap_group" "sql_group" {
 resource "aap_host" "vm_host" {
   inventory_id = aap_inventory.vm_inventory.id
   name         = module.single_virtual_machine.virtual_machine_name
-  groups = [aap_group.vm_groups.id]
+  groups = [aap_group.sql_group.id]
 }
