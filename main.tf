@@ -7,7 +7,8 @@ data "hcp_packer_image" "mssql-windows-2022" {
 
 
 module "vm" {
-  source = "github.com/tfo-apj-demos/terraform-vsphere-virtual-machine"
+  source  = "app.terraform.io/tfo-apj-demos/virtual-machine/vsphere"
+  version = "1.4.2"
 
   template          = data.hcp_packer_image.mssql-windows-2022.cloud_image_id
   hostname          = var.hostname
@@ -17,6 +18,7 @@ module "vm" {
   datacenter        = local.sites[var.site]
   primary_datastore = local.storage_profile[var.storage_profile]
   resource_pool     = local.tiers[var.tier]
+
   tags = {
     environment      = var.environment
     site             = var.site
@@ -25,6 +27,7 @@ module "vm" {
     storage_profile  = var.storage_profile
     security_profile = var.security_profile
   }
+  
   folder_path = var.folder_path
   disk_0_size = 100
 
