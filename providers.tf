@@ -8,5 +8,12 @@ terraform {
       source  = "hashicorp/hcp"
       version = "~> 0.77"
     }
+    aap = {
+      source  = "ansible/aap"
+      version = "~> 1.2"
+    }
   }
+}
+
+provider "aap" {
 }

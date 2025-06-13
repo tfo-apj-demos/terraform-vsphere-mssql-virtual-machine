@@ -1,3 +1,5 @@
+variable "TFC_WORKSPACE_ID" {}
+
 variable "vm_config" {
   description = "Configuration for multiple VMs"
   type = map(object({
