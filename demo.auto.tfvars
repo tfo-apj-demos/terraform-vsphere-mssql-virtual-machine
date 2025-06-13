@@ -3,8 +3,8 @@
 vm_config = {
   db-server = {
     hostname           = "mssql-server-01"
-    os_type            = "windows"
-    linux_distribution = ""
+    os_type            = "linux"
+    linux_distribution = "rhel"
     site               = "sydney"
     size               = "large"
     security_profile   = "db-server"
