@@ -34,4 +34,8 @@ resource "aap_host" "vm_host" {
   inventory_id = aap_inventory.vm_inventory.id
   name         = module.single_virtual_machine[each.key].virtual_machine_name
   groups       = [aap_group.sql_group.id]
+  
+  variables = jsonencode({
+    ansible_host    = module.single_virtual_machine[each.key].ip_address
+  })
 }
