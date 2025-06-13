@@ -26,7 +26,7 @@ resource "aap_inventory" "vm_inventory" {
 
 resource "aap_group" "sql_group" {
   inventory_id = aap_inventory.vm_inventory.id
-  name         = "mssql_group"
+  name         = "windows_servers"
 }
 
 resource "aap_host" "vm_host" {
