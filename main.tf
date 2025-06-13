@@ -37,5 +37,9 @@ resource "aap_host" "vm_host" {
   
   variables = jsonencode({
     ansible_host    = module.single_virtual_machine[each.key].ip_address
+    ansible_host       = module.single_virtual_machine[each.key].ip_address
+    ansible_connection = "ssh"
+    ansible_port       = 22
+    ansible_shell_type = "powershell"
   })
 }
