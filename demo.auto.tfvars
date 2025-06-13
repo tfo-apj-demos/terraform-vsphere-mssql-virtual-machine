@@ -2,7 +2,7 @@
 # It defines the properties for each VM, including hostname, domain, backup policy, environment, OS type, distribution, security profile, site, size, storage profile, and tier.
 vm_config = {
   db-server = {
-    hostname           = "database-server-01"
+    hostname           = "mssql-server-01"
     os_type            = "windows"
     linux_distribution = ""
     site               = "sydney"
