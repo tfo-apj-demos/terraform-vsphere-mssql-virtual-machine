@@ -16,4 +16,5 @@ terraform {
 }
 
 provider "aap" {
+  timeout = 30
 }
